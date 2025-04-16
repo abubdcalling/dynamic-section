@@ -36,15 +36,15 @@ class AboutController extends Controller
         }
 
         $data = [
-            'main_title'                => $request->input('main_title'),
-            'img1'                      => $img1Name,
-            'img2'                      => $img2Name,
-            '1st_paragraph_subtitle'    => $request->input('1st_paragraph_subtitle'),
-            '1st_paragraph_content'     => $request->input('1st_paragraph_content'),
-            '2nd_paragraph_subtitle'    => $request->input('2nd_paragraph_subtitle'),
-            '2nd_paragraph_content'     => $request->input('2nd_paragraph_content'),
-            'name'                      => $request->input('name'),
-            'link'                      => $request->input('link'),
+            'main_title' => $request->input('main_title'),
+            'img1' => $img1Name,
+            'img2' => $img2Name,
+            '1st_paragraph_subtitle' => $request->input('first_paragraph_subtitle'),
+            '1st_paragraph_content' => $request->input('second_paragraph_content'),
+            '2nd_paragraph_subtitle' => $request->input('first_paragraph_subtitle'),
+            '2nd_paragraph_content' => $request->input('second_paragraph_content'),
+            'name' => $request->input('name'),
+            'link' => $request->input('link'),
         ];
 
         if ($about) {
