@@ -13,9 +13,13 @@ return new class extends Migration
     {
         Schema::create('menus', function (Blueprint $table) {
             $table->id();
-            $table->string('name')->nullable();
-            $table->text('link')->nullable();
-
+            $table->string('name1')->nullable();
+            $table->text('link1')->nullable();
+            $table->string('name2')->nullable();
+            $table->text('link2')->nullable();
+            $table->string('name3')->nullable();
+            $table->text('link3')->nullable();
+            $table->string('logo')->nullable();
 
             $table->timestamps();
         });
