@@ -13,10 +13,10 @@ class About extends Model
         'main_title',
         'img1',
         'img2',
-        '1st_paragraph_subtitle',
-        '1st_paragraph_content',
-        '2nd_paragraph_subtitle',
-        '2nd_paragraph_content',
+        'first_paragraph_subtitle',
+        'first_paragraph_content',
+        'second_paragraph_subtitle',
+        'second_paragraph_content',
         'name',
         'link'
     ];
