@@ -2,47 +2,112 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
 use App\Models\WhyChooseUs;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
+use Exception;
 
 class WhyChooseUsController extends Controller
 {
     public function show()
     {
-        $whychooseus = WhyChooseUs::first();
-        return response()->json($whychooseus);
+        try {
+            $whyChooseUs = WhyChooseUs::first();
+
+            if ($whyChooseUs) {
+                $whyChooseUs->left_side_icon   = $whyChooseUs->left_side_icon ? url('uploads/WhyChooseUs/' . $whyChooseUs->left_side_icon) : null;
+                $whyChooseUs->middle_side_icon = $whyChooseUs->middle_side_icon ? url('uploads/WhyChooseUs/' . $whyChooseUs->middle_side_icon) : null;
+            }
+
+            return response()->json([
+                'success' => true,
+                'message' => 'Why Choose Us section retrieved successfully.',
+                'data'    => $whyChooseUs
+            ]);
+        } catch (Exception $e) {
+            Log::error('Error fetching Why Choose Us: ' . $e->getMessage());
+
+            return response()->json([
+                'success' => false,
+                'message' => 'Failed to retrieve Why Choose Us section.'
+            ], 500);
+        }
     }
 
     public function storeOrUpdate(Request $request)
     {
-        $whyChooseUs = WhyChooseUs::first();
+        try {
+            $validated = $request->validate([
+                'main_title'                   => 'nullable|string|max:255',
 
-        $data = [
-            'main_title'                   => $request->input('main_title'),
+                'left_side_icon'               => 'nullable|image|mimes:jpg,jpeg,png,webp,gif|max:2048',
+                'left_side_main_title'         => 'nullable|string|max:255',
+                'left_side_comments'           => 'nullable|string',
+                'left_side_key_title'          => 'nullable|string|max:255',
+                'left_side_content'            => 'nullable|string',
 
-            'left_side_main_title'         => $request->input('left_side_main_title'),
-            'left_side_icon'               => $request->input('left_side_icon'),
-            'left_side_comments'           => $request->input('left_side_comments'),
-            'left_side_key_title'          => $request->input('left_side_key_title'),
-            'left_side_content'            => $request->input('left_side_content'),
+                'middle_side_icon'             => 'nullable|image|mimes:jpg,jpeg,png,webp,gif|max:2048',
+                'middle_side_main_title'       => 'nullable|string|max:255',
+                'middle_side_comments'         => 'nullable|string',
+                'middle_side_key_title'        => 'nullable|string|max:255',
+                'middle_side_content'          => 'nullable|string',
+            ]);
 
-            'middle_side_main_title'       => $request->input('middle_side_main_title'),
-            'middle_side_icon'             => $request->input('middle_side_icon'),
-            'middle_side_comments'         => $request->input('middle_side_comments'),
-            'middle_side_key_title'        => $request->input('middle_side_key_title'),
-            'middle_side_content'          => $request->input('middle_side_content'),
+            $whyChooseUs = WhyChooseUs::first();
 
-            'right_side_img'               => $request->input('right_side_img'),
-            'right_side_icon'              => $request->input('right_side_icon'),
-        ];
+            $leftIcon = $whyChooseUs->left_side_icon ?? null;
+            $middleIcon = $whyChooseUs->middle_side_icon ?? null;
 
-        if ($whyChooseUs) {
-            $whyChooseUs->update($data);
-        } else {
-            $whyChooseUs = WhyChooseUs::create($data);
+            if ($request->hasFile('left_side_icon')) {
+                $file = $request->file('left_side_icon');
+                $leftIcon = time() . '_left_icon.' . $file->getClientOriginalExtension();
+                $file->move(public_path('uploads/WhyChooseUs'), $leftIcon);
+            }
+
+            if ($request->hasFile('middle_side_icon')) {
+                $file = $request->file('middle_side_icon');
+                $middleIcon = time() . '_middle_icon.' . $file->getClientOriginalExtension();
+                $file->move(public_path('uploads/WhyChooseUs'), $middleIcon);
+            }
+
+            $data = [
+                'main_title'                   => $validated['main_title'] ?? null,
+
+                'left_side_icon'               => $leftIcon,
+                'left_side_main_title'         => $validated['left_side_main_title'] ?? null,
+                'left_side_comments'           => $validated['left_side_comments'] ?? null,
+                'left_side_key_title'          => $validated['left_side_key_title'] ?? null,
+                'left_side_content'            => $validated['left_side_content'] ?? null,
+
+                'middle_side_icon'             => $middleIcon,
+                'middle_side_main_title'       => $validated['middle_side_main_title'] ?? null,
+                'middle_side_comments'         => $validated['middle_side_comments'] ?? null,
+                'middle_side_key_title'        => $validated['middle_side_key_title'] ?? null,
+                'middle_side_content'          => $validated['middle_side_content'] ?? null,
+            ];
+
+            if ($whyChooseUs) {
+                $whyChooseUs->update($data);
+            } else {
+                $whyChooseUs = WhyChooseUs::create($data);
+            }
+
+            $whyChooseUs->left_side_icon   = $whyChooseUs->left_side_icon ? url('uploads/WhyChooseUs/' . $whyChooseUs->left_side_icon) : null;
+            $whyChooseUs->middle_side_icon = $whyChooseUs->middle_side_icon ? url('uploads/WhyChooseUs/' . $whyChooseUs->middle_side_icon) : null;
+
+            return response()->json([
+                'success' => true,
+                'message' => 'Why Choose Us saved successfully.',
+                'data'    => $whyChooseUs
+            ]);
+        } catch (Exception $e) {
+            Log::error('Error saving Why Choose Us: ' . $e->getMessage());
+
+            return response()->json([
+                'success' => false,
+                'message' => 'Failed to save Why Choose Us.',
+                'error'   => $e->getMessage()
+            ], 500);
         }
-
-        return response()->json($whyChooseUs);
     }
 }

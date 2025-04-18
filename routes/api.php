@@ -8,6 +8,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HeroController;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\BannerController;
 use App\Http\Controllers\PossibleController;
 use App\Http\Controllers\HomeController;
 use App\Models\OurCoreValue;
@@ -18,6 +19,8 @@ use App\Http\Controllers\WhyChooseUsController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\ContactMessageController;
 use App\Http\Controllers\FrontendController;
+use App\Models\OurCompreensiveService;
+use App\Http\Controllers\OurComprehensiveServiceController;
 
 /*
 |--------------------------------------------------------------------------
@@ -68,7 +71,7 @@ Route::middleware('auth:api')->group(function () {
     Route::post('/aboutus', [AboutController::class, 'storeOrUpdate']);
 });
 
-// Dynamic Possible Design
+// Dynamic our mission and vision Design
 Route::middleware('auth:api')->group(function () {
     Route::get('/possible', [PossibleController::class, 'show']);
     Route::post('/possible', [PossibleController::class, 'storeOrUpdate']);
@@ -81,6 +84,12 @@ Route::middleware('auth:api')->group(function () {
     Route::post('/home', [HomeController::class, 'storeOrUpdate']);
 });
 
+// Banner Design
+Route::middleware('auth:api')->group(function () {
+    Route::get('/banner', [BannerController::class, 'show']);
+    Route::post('/banner', [BannerController::class, 'storeOrUpdate']);
+});
+
 
 // Dynamic Possible Design
 Route::middleware('auth:api')->group(function () {
@@ -88,29 +97,35 @@ Route::middleware('auth:api')->group(function () {
     Route::post('/ourcorevalue', [OurCoreValueController::class, 'storeOrUpdate']);
 });
 
-// Dynamic Contact Design
+// Hear from you
 Route::middleware('auth:api')->group(function () {
     Route::get('/contact', [ContactController::class, 'show']);
     Route::post('/contact', [ContactController::class, 'storeOrUpdate']);
 });
 
 
-// Dynamic why choose us Design
+// Dynamic contact us Design
 Route::middleware('auth:api')->group(function () {
     Route::get('/whychooseus', [WhyChooseUsController::class, 'show']);
     Route::post('/whychooseus', [WhyChooseUsController::class, 'storeOrUpdate']);
 });
 
-// Dynamic why choose us Design
+
+
+// Dynamic nationwide services Design
 Route::middleware('auth:api')->group(function () {
     Route::get('/service', [ServiceController::class, 'show']);
     Route::post('/service', [ServiceController::class, 'storeOrUpdate']);
 });
 
-
+// Dynamic our comprensive  services Design
 Route::middleware('auth:api')->group(function () {
-    Route::post('/service', [ServiceController::class, 'storeOrUpdate']);
+    Route::get('/ourcomprensive', [OurComprehensiveServiceController::class, 'show']);
+    Route::post('/ourcomprensive', [OurComprehensiveServiceController::class, 'storeOrUpdate']);
 });
+
+
+
 
 Route::middleware('auth:api')->group(function () {
    

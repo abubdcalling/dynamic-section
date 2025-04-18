@@ -9,36 +9,19 @@ class Service extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
-        'main_title_from_1st_section',
-        'icon_from_1st_section',
-        'content_from_1st_section',
-        'key_title_from_1st_section',
-        'sub_content_from_1st_section',
+    // app/Models/OurComprehensiveService.php
+
+protected $fillable = [
+    'main_title',
+
+    'subtitle1', 'description1', 'icon1',
+    'subtitle2', 'description2', 'icon2',
+    'subtitle3', 'description3', 'icon3',
+    'subtitle4', 'description4', 'icon4',
+
+    'img',
+];
+
     
-        'main_title_from_2nd_section',
-        'icon_from_2nd_section',
-        'content_from_2nd_section',
-        'key_title_from_2nd_section',
-        'sub_content_from_2nd_section',
-    
-        'main_title_from_3rd_section',
-        'icon_from_3rd_section',
-        'content_from_3rd_section',
-        'key_title_from_3rd_section',
-        'sub_content_from_3rd_section',
-    
-        'main_title_from_4th_section',
-        'icon_from_4th_section',
-        'content_from_4th_section',
-        'key_title_from_4th_section',
-        'sub_content_from_4th_section',
-    
-        'main_title_from_5th_section',
-        'icon_from_5th_section',
-        'content_from_5th_section',
-        'key_title_from_5th_section',
-        'sub_content_from_5th_section',
-    ];
     
 }

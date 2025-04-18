@@ -14,39 +14,25 @@ return new class extends Migration
         Schema::create('services', function (Blueprint $table) {
             $table->id();
 
-            $table->string('main_title_from_1st_section')->nullable();
-            $table->string('icon_from_1st_section')->nullable();
-            $table->longText('content_from_1st_section')->nullable();
-            $table->string('key_title_from_1st_section')->nullable();
-            $table->longText('sub_content_from_1st_section')->nullable();
+            $table->string('main_title')->nullable();
 
-            $table->string('main_title_from_2nd_section')->nullable();
-            $table->string('icon_from_2nd_section')->nullable();
-            $table->longText('content_from_2nd_section')->nullable();
-            $table->string('key_title_from_2nd_section')->nullable();
-            $table->longText('sub_content_from_2nd_section')->nullable();
+            $table->string('subtitle1')->nullable();
+            $table->text('description1')->nullable();
+            $table->string('icon1')->nullable();
 
-            $table->string('main_title_from_3rd_section')->nullable();
-            $table->string('icon_from_3rd_section')->nullable();
-            $table->longText('content_from_3rd_section')->nullable();
-            $table->string('key_title_from_3rd_section')->nullable();
-            $table->longText('sub_content_from_3rd_section')->nullable();
+            $table->string('subtitle2')->nullable();
+            $table->text('description2')->nullable();
+            $table->string('icon2')->nullable();
 
+            $table->string('subtitle3')->nullable();
+            $table->text('description3')->nullable();
+            $table->string('icon3')->nullable();
 
-            $table->string('main_title_from_4th_section')->nullable();
-            $table->string('icon_from_4th_section')->nullable();
-            $table->longText('content_from_4th_section')->nullable();
-            $table->string('key_title_from_4th_section')->nullable();
-            $table->longText('sub_content_from_4th_section')->nullable();
+            $table->string('subtitle4')->nullable();
+            $table->text('description4')->nullable();
+            $table->string('icon4')->nullable();
 
-
-            $table->string('main_title_from_5th_section')->nullable();
-            $table->string('icon_from_5th_section')->nullable();
-            $table->longText('content_from_5th_section')->nullable();
-            $table->string('key_title_from_5th_section')->nullable();
-            $table->longText('sub_content_from_5th_section')->nullable();
-
-
+            $table->string('img')->nullable();
 
 
 

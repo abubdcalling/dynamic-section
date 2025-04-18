@@ -28,8 +28,7 @@ return new class extends Migration
             $table->longText('middle_side_key_title')->nullable();
             $table->longText('middle_side_content')->nullable();
 
-            $table->string('right_side_img')->nullable();
-            $table->string('right_side_icon')->nullable();
+            
 
             $table->timestamps();
         });
