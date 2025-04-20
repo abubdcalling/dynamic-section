@@ -42,7 +42,7 @@ class BannerController extends Controller
                 'subtitle'     => 'nullable|string|max:255',
                 'description'  => 'nullable|string',
                 'button_text'  => 'nullable|string|max:255',
-                'button_link'  => 'nullable|string|max:255|url',
+                'button_link'  => 'nullable|string|max:255',
                 'logo'         => 'nullable|image|mimes:jpg,jpeg,png,webp,gif|max:10240', // 10MB
                 'back_img'     => 'nullable|image|mimes:jpg,jpeg,png,webp,gif|max:10240', // 10MB
             ]);

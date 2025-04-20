@@ -27,6 +27,10 @@ return new class extends Migration
             $table->string('middle_side_comments')->nullable();
             $table->longText('middle_side_key_title')->nullable();
             $table->longText('middle_side_content')->nullable();
+            
+            
+            $table->string('img')->nullable();
+            $table->string('icon')->nullable();            
 
             
 

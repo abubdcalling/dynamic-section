@@ -23,6 +23,9 @@ class WhyChooseUs extends Model
         'middle_side_comments',
         'middle_side_key_title',
         'middle_side_content',
+
+        'img',
+        'icon'
         
     ];
     
