@@ -49,7 +49,7 @@ class ContactMessageController extends Controller
                 'phone_number' => 'required|string|max:20',
                 'company_name' => 'nullable|string|max:255',
                 'comments' => 'nullable|string',
-                'email_address' => 'required|email|unique:contact_messages,email_address',  // fixed table name here
+                'email_address' => 'required|email',  // fixed table name here
             ]);
 
             $contact = ContactMessage::create($validated);
