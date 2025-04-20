@@ -44,21 +44,21 @@ class ServiceController extends Controller
 
                 'subtitle1'    => 'nullable|string|max:255',
                 'description1' => 'nullable|string',
-                'icon1'        => 'nullable|image|mimes:jpg,jpeg,png,webp,gif|max:2048',
+                'icon1'        => 'nullable|image|mimes:jpg,jpeg,png,webp,gif|max:10240 ',
 
                 'subtitle2'    => 'nullable|string|max:255',
                 'description2' => 'nullable|string',
-                'icon2'        => 'nullable|image|mimes:jpg,jpeg,png,webp,gif|max:2048',
+                'icon2'        => 'nullable|image|mimes:jpg,jpeg,png,webp,gif|max:10240 ',
 
                 'subtitle3'    => 'nullable|string|max:255',
                 'description3' => 'nullable|string',
-                'icon3'        => 'nullable|image|mimes:jpg,jpeg,png,webp,gif|max:2048',
+                'icon3'        => 'nullable|image|mimes:jpg,jpeg,png,webp,gif|max:10240 ',
 
                 'subtitle4'    => 'nullable|string|max:255',
                 'description4' => 'nullable|string',
-                'icon4'        => 'nullable|image|mimes:jpg,jpeg,png,webp,gif|max:2048',
+                'icon4'        => 'nullable|image|mimes:jpg,jpeg,png,webp,gif|max:10240 ',
 
-                'img'          => 'nullable|image|mimes:jpg,jpeg,png,webp,gif|max:2048',
+                'img'          => 'nullable|image|mimes:jpg,jpeg,png,webp,gif|max:10240 ',
             ]);
 
             $service = Service::first();

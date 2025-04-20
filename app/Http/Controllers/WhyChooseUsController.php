@@ -40,13 +40,13 @@ class WhyChooseUsController extends Controller
             $validated = $request->validate([
                 'main_title'                   => 'nullable|string|max:255',
 
-                'left_side_icon'               => 'nullable|image|mimes:jpg,jpeg,png,webp,gif|max:2048',
+                'left_side_icon'               => 'nullable|image|mimes:jpg,jpeg,png,webp,gif|max:10240 ',
                 'left_side_main_title'         => 'nullable|string|max:255',
                 'left_side_comments'           => 'nullable|string',
                 'left_side_key_title'          => 'nullable|string|max:255',
                 'left_side_content'            => 'nullable|string',
 
-                'middle_side_icon'             => 'nullable|image|mimes:jpg,jpeg,png,webp,gif|max:2048',
+                'middle_side_icon'             => 'nullable|image|mimes:jpg,jpeg,png,webp,gif|max:10240 ',
                 'middle_side_main_title'       => 'nullable|string|max:255',
                 'middle_side_comments'         => 'nullable|string',
                 'middle_side_key_title'        => 'nullable|string|max:255',

@@ -15,6 +15,8 @@ class Menu extends Model
         'link2',
         'name3',
         'link3',
+        'name4',
+        'link4',
         'logo',
     ];
     

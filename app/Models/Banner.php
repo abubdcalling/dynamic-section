@@ -14,5 +14,7 @@ class Banner extends Model
         'description',
         'logo',
         'button_text',
+        'button_link',
+        'back_img'
     ];
 }

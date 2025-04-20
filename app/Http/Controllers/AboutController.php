@@ -39,8 +39,8 @@ class AboutController extends Controller
         try {
             $validated = $request->validate([
                 'main_title'                => 'nullable|string|max:255',
-                'img1'                      => 'nullable|image|mimes:jpg,jpeg,png,webp,gif|max:2048',
-                'img2'                      => 'nullable|image|mimes:jpg,jpeg,png,webp,gif|max:2048',
+                'img1'                      => 'nullable|image|mimes:jpg,jpeg,png,webp,gif|max:10240 ',
+                'img2'                      => 'nullable|image|mimes:jpg,jpeg,png,webp,gif|max:10240 ',
                 'first_paragraph_subtitle'  => 'nullable|string',
                 'first_paragraph_content'   => 'nullable|string',
                 'second_paragraph_subtitle' => 'nullable|string',

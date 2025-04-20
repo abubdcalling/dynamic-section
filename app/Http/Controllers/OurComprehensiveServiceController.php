@@ -49,23 +49,23 @@ class OurComprehensiveServiceController extends Controller
 
                 'title1'     => 'nullable|string|max:255',
                 'content1'   => 'nullable|string',
-                'img1'       => 'nullable|image|mimes:jpg,jpeg,png,webp,gif|max:2048',
+                'img1'       => 'nullable|image|mimes:jpg,jpeg,png,webp,gif|max:10240 ',
 
                 'title2'     => 'nullable|string|max:255',
                 'content2'   => 'nullable|string',
-                'img2'       => 'nullable|image|mimes:jpg,jpeg,png,webp,gif|max:2048',
+                'img2'       => 'nullable|image|mimes:jpg,jpeg,png,webp,gif|max:10240 ',
 
                 'title3'     => 'nullable|string|max:255',
                 'content3'   => 'nullable|string',
-                'img3'       => 'nullable|image|mimes:jpg,jpeg,png,webp,gif|max:2048',
+                'img3'       => 'nullable|image|mimes:jpg,jpeg,png,webp,gif|max:10240 ',
 
                 'title4'     => 'nullable|string|max:255',
                 'content4'   => 'nullable|string',
-                'img4'       => 'nullable|image|mimes:jpg,jpeg,png,webp,gif|max:2048',
+                'img4'       => 'nullable|image|mimes:jpg,jpeg,png,webp,gif|max:10240 ',
 
                 'title5'     => 'nullable|string|max:255',
                 'content5'   => 'nullable|string',
-                'img5'       => 'nullable|image|mimes:jpg,jpeg,png,webp,gif|max:2048',
+                'img5'       => 'nullable|image|mimes:jpg,jpeg,png,webp,gif|max:10240 ',
             ]);
 
             // Get the existing service or create a new one

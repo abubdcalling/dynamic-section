@@ -43,7 +43,9 @@ class MenuController extends Controller
                 'link2' => 'nullable|string',
                 'name3' => 'nullable|string|max:255',
                 'link3' => 'nullable|string',
-                'logo'  => 'nullable|image|mimes:jpg,jpeg,png,webp,gif|max:2048',
+                'name4' => 'nullable|string|max:255',
+                'link4' => 'nullable|string',
+                'logo'  => 'nullable|image|mimes:jpg,jpeg,png,webp,gif|max:10240',
             ]);
 
             $menu = Menu::first();
@@ -62,6 +64,8 @@ class MenuController extends Controller
                 'link2' => $validated['link2'] ?? null,
                 'name3' => $validated['name3'] ?? null,
                 'link3' => $validated['link3'] ?? null,
+                'name4' => $validated['name4'] ?? null,
+                'link4' => $validated['link4'] ?? null,
                 'logo'  => $logo,
             ];
 

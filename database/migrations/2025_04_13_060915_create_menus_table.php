@@ -19,6 +19,8 @@ return new class extends Migration
             $table->text('link2')->nullable();
             $table->string('name3')->nullable();
             $table->text('link3')->nullable();
+            $table->string('name4')->nullable();
+            $table->text('link4')->nullable();
             $table->string('logo')->nullable();
 
             $table->timestamps();
