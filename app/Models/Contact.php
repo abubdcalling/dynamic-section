@@ -13,14 +13,6 @@ class Contact extends Model
         'main_title',
         'sub_title',
 
-        'first_name',
-        'last_name',
-        'company_name',
-        'email_address',
-        'phone_number',
-        'comments',
-        'submit',
-
         'title_our_address_section',
         'icon_our_address_section',
         'address_our_address_section',

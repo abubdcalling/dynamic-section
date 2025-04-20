@@ -13,24 +13,24 @@ return new class extends Migration
     {
         Schema::create('contacts', function (Blueprint $table) {
             $table->id();
-            $table->string('breadcrumb')->nullable(false);
-            $table->string('main_title')->nullable(false);
-            $table->string('sub_title')->nullable(false);
+            $table->string('breadcrumb')->nullable();
+            $table->string('main_title')->nullable();
+            $table->string('sub_title')->nullable();
 
 
 
-            $table->string('title_our_address_section')->nullable(false);
-            $table->string('icon_our_address_section')->nullable(false);
-            $table->string('address_our_address_section')->nullable(false);
+            $table->string('title_our_address_section')->nullable();
+            $table->string('icon_our_address_section')->nullable();
+            $table->string('address_our_address_section')->nullable();
             
             
-            $table->string('title_our_contact_section')->nullable(false);
-            $table->string('mail_icon_our_contact_section')->nullable(false);
-            $table->string('mail_address_our_contact_section')->nullable(false);
+            $table->string('title_our_contact_section')->nullable();
+            $table->string('mail_icon_our_contact_section')->nullable();
+            $table->string('mail_address_our_contact_section')->nullable();
             
-            $table->string('icon_our_contact_section')->nullable(false);
-            $table->string('phone_number_our_contact_section')->nullable(false);
-            $table->string('copyright')->nullable(false);
+            $table->string('icon_our_contact_section')->nullable();
+            $table->string('phone_number_our_contact_section')->nullable();
+            $table->string('copyright')->nullable();
             
             $table->timestamps();
         });
