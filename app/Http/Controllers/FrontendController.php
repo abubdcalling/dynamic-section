@@ -8,6 +8,7 @@ use App\Models\Home;
 use App\Models\Possible;
 use App\Models\WhyChooseUs;
 use App\Models\About;
+use App\Models\Banner;
 use App\Models\Contact;
 use App\Models\Menu;
 use App\Models\OurCoreValue;
@@ -27,6 +28,7 @@ class FrontendController extends Controller
             'ourcorevalue' => OurCoreValue::all(),
             'service' => Service::all(),
             'whychooseus' => WhyChooseUs::all(),
+            'banner' => Banner::first(),
         ];
 
         return response()->json($data);
