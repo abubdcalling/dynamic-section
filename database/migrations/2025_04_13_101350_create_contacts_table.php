@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('breadcrumb')->nullable();
             $table->string('main_title')->nullable();
-            $table->string('sub_title')->nullable();
+            $table->longText('sub_title')->nullable();
 
 
 

@@ -42,7 +42,7 @@ class ContactController extends Controller
             $validated = $request->validate([
                 'breadcrumb'                        => 'nullable|image|mimes:jpg,jpeg,png,webp,gif|max:10240',
                 'main_title'                        => 'nullable|string|max:255',
-                'sub_title'                         => 'nullable|string|max:255',
+                'sub_title'                         => 'nullable|string',
 
                 'title_our_address_section'         => 'nullable|string|max:255',
                 'icon_our_address_section'          => 'nullable|image|mimes:jpg,jpeg,png,webp,gif|max:10240',
