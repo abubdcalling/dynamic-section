@@ -11,6 +11,7 @@ use App\Models\About;
 use App\Models\Banner;
 use App\Models\Contact;
 use App\Models\Menu;
+use App\Models\OurComprehensiveService;
 use App\Models\OurCoreValue;
 use App\Models\Service;
 
@@ -29,6 +30,7 @@ class FrontendController extends Controller
             'service' => Service::all(),
             'whychooseus' => WhyChooseUs::all(),
             'banner' => Banner::first(),
+            'ourcomprenhensive' => OurComprehensiveService::all(),
         ];
 
         return response()->json($data);
