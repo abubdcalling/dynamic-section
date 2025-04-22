@@ -18,7 +18,7 @@ class ContactMessageMail extends Mailable
     /**
      * Create a new message instance.
      */
-    public function __construct(ContactMessage $contact)
+    public function __construct($contact)
     {
         $this->contact = $contact;
 
@@ -28,7 +28,7 @@ class ContactMessageMail extends Mailable
     public function build()
     {
         return $this->subject('New Contact Message Received')
-                    ->markdown('emails.contact_message')
+                    ->view('emails.contact_message')
                     ->with(['contact' => $this->contact]);
     }
 
