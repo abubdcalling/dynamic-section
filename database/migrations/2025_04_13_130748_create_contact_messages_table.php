@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('phone_number');
             $table->string('company_name')->nullable();
             $table->text('comments')->nullable();
-            $table->string('email_address');
+            $table->string('email_address')->nullable();
             $table->timestamps();
         });
     }
