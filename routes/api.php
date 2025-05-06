@@ -21,6 +21,7 @@ use App\Http\Controllers\ContactMessageController;
 use App\Http\Controllers\FrontendController;
 use App\Models\OurCompreensiveService;
 use App\Http\Controllers\OurComprehensiveServiceController;
+use App\Http\Controllers\UpdateController;
 
 /*
 |--------------------------------------------------------------------------
@@ -125,6 +126,12 @@ Route::middleware('auth:api')->group(function () {
 });
 
 
+//for update email and password
+Route::middleware('auth:api')->group(function () {
+    Route::get('/updateEp', [UpdateController::class, 'show']);
+    Route::post('/updateEp', [UpdateController::class, 'UpdateEP']);
+
+});
 
 
 Route::middleware('auth:api')->group(function () {
