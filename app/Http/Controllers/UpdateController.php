@@ -35,7 +35,7 @@ class UpdateController extends Controller
     {
         try {
             $request->validate([
-                'email' => 'required|email|unique:users,email,',
+                'email' => 'required|email',
                 'password' => 'required|string|min:8',
             ]);
 
